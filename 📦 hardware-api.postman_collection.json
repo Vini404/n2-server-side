@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "Hardware API",
+    "_postman_id": "b4d8901a-9e1d-4b6b-97f1-512c7d6dbd87",
+    "description": "Coleção de requisições para testar a API de componentes de hardware (CRUD + busca por nome)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar componentes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/componentes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["componentes"]
+        }
+      }
+    },
+    {
+      "name": "Buscar componente por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/componentes/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["componentes", "1"]
+        }
+      }
+    },
+    {
+      "name": "Buscar componente por nome",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/componentes/search?nome=Placa",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["componentes", "search"],
+          "query": [
+            {
+              "key": "nome",
+              "value": "Placa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Criar componente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome_componente\": \"Placa Mãe ASUS\",\n  \"desc_componente\": \"Socket AM4\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/componentes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["componentes"]
+        }
+      }
+    },
+    {
+      "name": "Atualizar componente",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome_componente\": \"Placa Mãe Gigabyte\",\n  \"desc_componente\": \"Socket AM5\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/componentes/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["componentes", "1"]
+        }
+      }
+    },
+    {
+      "name": "Excluir componente",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/componentes/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["componentes", "1"]
+        }
+      }
+    }
+  ]
+}
